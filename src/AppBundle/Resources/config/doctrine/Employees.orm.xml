@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Employees" table="EMPLOYEES">
+    <id name="employeeId" type="integer" column="EMPLOYEE_ID">
+      <generator strategy="SEQUENCE"/>
+      <sequence-generator sequence-name="EMPLOYEES_EMPLOYEE_ID_seq" allocation-size="1" initial-value="1"/>
+    </id>
+    <field name="departmentId" type="integer" column="DEPARTMENT_ID" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="firstName" type="string" column="FIRST_NAME" length="20" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="lastName" type="string" column="LAST_NAME" length="20" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="managerId" type="integer" column="MANAGER_ID" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="salary" type="integer" column="SALARY" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>
